@@ -1,5 +1,7 @@
 @import "./reset.scss";
+@import "../font/font.scss";
 
 h1{
   color: red;
+  font-family: 'Bebas Neue', cursive;;
 }
