@@ -1,7 +1,18 @@
 @import "./reset.scss";
 @import "../font/font.scss";
 
-h1{
-  color: red;
-  font-family: 'Bebas Neue', cursive;
+h1 {
+  color: white;
+  font-family: "Bebas Neue", cursive;
+  font-size: 3rem;
+}
+
+.container {
+  height: 20vh;
+  margin-bottom: 10px;
+}
+
+a {
+  display: inline-flex;
+  margin-left: 20px;
 }
