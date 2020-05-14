@@ -1,3 +1,5 @@
+const image = require("/asset/img/kyrie.jpg");
+
 document.addEventListener("DOMContentLoaded", function () {
   class Model {
     constructor() {
@@ -25,9 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
           title: "Players",
           url: "#player",
           background: "green",
-          img: `
-          <div class="imgPlayer">
-        </div>
+          content: `
+          <img src=${image} alt="player"/>
           `,
         },
         {
@@ -46,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
   class View {
     constructor(pages) {
       this.container = document.querySelector(".container");
-      this.img = document.querySelector(".imgPlayer");
       this.container.innerHTML = "";
       this.addHeader(pages);
     }
@@ -90,12 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
     changeBackground(color) {
       this.container.style.background = color;
     }
-
-    changeImg() {
-      const content = document.createElement("img");
-      this.img.appendChild(content);
-      content.src = "../src/asset/img/kyrie.jpg";
-    }
   }
 
   function controller() {
@@ -106,10 +100,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let page = new View(data.pages);
     page.changeTitle(currentPage.title);
     page.changeBackground(currentPage.background);
-    page.changeImg(currentPage.img);
 
     if (currentPage.content) {
-      page.addContent(currentPage.img);
+      page.addContent(currentPage.content);
     }
 
     if (typeof currentPage.dynamisme === "function") {
